@@ -1,31 +1,63 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In / Sign Up</title>
+    <title>HomePage</title>
     <style>
+        /* Enable dark mode by setting a dark background and light text */
         body {
-            background-image: url('https://img.freepik.com/free-vector/retro-styled-pattern-background_1048-6593.jpg');
-            background-size: cover;
+            background-color: #121212;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
+            margin: 0;
         }
+
         .container {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: #1e1e1e;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
-        .hidden {
-            display: none;
-        }
+
         button, input {
             margin: 10px;
             padding: 10px;
+            border: none;
+            border-radius: 30px; /* Circular edges */
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #3b3b3b;
+            color: #ffffff;
+        }
+
+        button:hover {
+            background-color: #555555;
+        }
+
+        input {
+            background-color: #2c2c2c;
+            color: #ffffff;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #startButton {
+            /* Hides the "Press || This" button after being clicked */
+            visibility: hidden;
+        }
+
+        #authButtons button {
+            width: 150px;
         }
     </style>
 </head>
@@ -69,6 +101,7 @@
 
     startButton.addEventListener('click', () => {
         authButtons.classList.toggle('hidden');
+        startButton.style.visibility = 'hidden';  // Hide the "Press || This" button when clicked
     });
 
     signUpButton.addEventListener('click', () => {
