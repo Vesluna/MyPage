@@ -293,7 +293,7 @@ audio {
     border-radius: 10px;
 }
 
-.close, .close-roblox {
+.close, .close-roblox, .close-notification {
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -303,7 +303,9 @@ audio {
 .close:hover,
 .close:focus,
 .close-roblox:hover,
-.close-roblox:focus {
+.close-roblox:focus,
+.close-notification:hover,
+.close-notification:focus {
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -329,6 +331,13 @@ audio {
 
 .modal-content button:hover {
     background: #00cc6a;
+}
+
+/* Notification-specific styles */
+#notification-modal .modal-content p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    color: #ffffff;
 }
 
 /* Back to Top Button */
