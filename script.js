@@ -80,52 +80,56 @@ contactForm.addEventListener('submit', (e) => {
         });
 });
 
-// Project buttons
-const downloadBtn = document.getElementById('download-btn');
-const playBtn = document.getElementById('play-btn');
-const modal = document.getElementById('discord-modal');
-const closeSpan = document.querySelector('.close');
-const joinBtn = document.getElementById('join-discord');
-const noBtn = document.getElementById('no-join');
-
-const robloxModal = document.getElementById('roblox-modal');
-const closeRoblox = document.querySelector('.close-roblox');
-const continueRoblox = document.getElementById('continue-roblox');
-const nevermindRoblox = document.getElementById('nevermind-roblox');
-const robloxLink = 'https://www.roblox.com/games/placeholder'; // Replace with actual Roblox link
-
-downloadBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
-});
-
-playBtn.addEventListener('click', () => {
-    robloxModal.style.display = 'block';
-});
-
-closeSpan.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-noBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-joinBtn.addEventListener('click', () => {
-    window.location.href = 'https://discord.gg/placeholder'; // Replace with actual Discord invite link
-    modal.style.display = 'none';
-});
-
-closeRoblox.addEventListener('click', () => {
-    robloxModal.style.display = 'none';
-});
-
-nevermindRoblox.addEventListener('click', () => {
-    robloxModal.style.display = 'none';
-});
-
-continueRoblox.addEventListener('click', () => {
-    window.location.href = robloxLink;
-    robloxModal.style.display = 'none';
+// Generic Project Button Handler
+document.addEventListener('DOMContentLoaded', () => {
+    const projectButtons = document.querySelectorAll('.project-button');
+    const discordModal = document.getElementById('discord-modal');
+    const robloxModal = document.getElementById('roblox-modal');
+    
+    // Modal close handlers
+    document.querySelector('.close').addEventListener('click', () => {
+        discordModal.style.display = 'none';
+    });
+    document.getElementById('no-join').addEventListener('click', () => {
+        discordModal.style.display = 'none';
+    });
+    document.getElementById('join-discord').addEventListener('click', () => {
+        window.location.href = 'https://discord.gg/placeholder'; // Replace with actual Discord invite link
+        discordModal.style.display = 'none';
+    });
+    
+    document.querySelector('.close-roblox').addEventListener('click', () => {
+        robloxModal.style.display = 'none';
+    });
+    document.getElementById('nevermind-roblox').addEventListener('click', () => {
+        robloxModal.style.display = 'none';
+    });
+    document.getElementById('continue-roblox').addEventListener('click', () => {
+        const robloxLink = 'https://www.roblox.com/games/placeholder'; // Replace with actual Roblox link
+        window.location.href = robloxLink;
+        robloxModal.style.display = 'none';
+    });
+    
+    // Generic button event listeners
+    projectButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const action = button.getAttribute('data-action');
+            const modalType = button.getAttribute('data-modal');
+            const url = button.getAttribute('data-url');
+            
+            if (action === 'redirect' && url) {
+                window.location.href = url;
+            } else if (action === 'modal' && modalType) {
+                if (modalType === 'discord') {
+                    discordModal.style.display = 'block';
+                } else if (modalType === 'roblox') {
+                    robloxModal.style.display = 'block';
+                }
+                // Easy to add more modal types here
+            }
+            // Add more action types as needed, e.g., 'download-file', etc.
+        });
+    });
 });
 
 // Back to Top Button
@@ -168,8 +172,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe project cards, skill cards, music cards, and sections
-document.querySelectorAll('.project-card, .skill-card, .music-card, .about, .contact, .skills, .music').forEach(el => {
+// Observe project cards, skill cards, music cards, top-song cards, and sections
+document.querySelectorAll('.project-card, .skill-card, .music-card, .top-song-card, .about, .contact, .skills, .music, .top-songs').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
