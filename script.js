@@ -200,4 +200,4 @@ createParticles();
 document.addEventListener('DOMContentLoaded', () => {
     // Add loading animation
     document.body.classList.add('loaded');
-});
+}); 
