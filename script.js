@@ -128,6 +128,22 @@ continueRoblox.addEventListener('click', () => {
     robloxModal.style.display = 'none';
 });
 
+// Back to Top Button
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTop.style.display = 'block';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+
+backToTop.addEventListener('click', () => {
+    document.getElementById('home').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
 // Intersection Observer for animations
 const observerOptions = {
     threshold: 0.1,
@@ -139,12 +155,21 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
+            
+            // Animate skill bars on intersection
+            if (entry.target.classList.contains('skill-card')) {
+                const bar = entry.target.querySelector('.bar');
+                if (bar) {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width + '%';
+                }
+            }
         }
     });
 }, observerOptions);
 
-// Observe project cards and sections
-document.querySelectorAll('.project-card, .music-card, .about, .contact, .music').forEach(el => {
+// Observe project cards, skill cards, music cards, and sections
+document.querySelectorAll('.project-card, .skill-card, .music-card, .about, .contact, .skills, .music').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -200,4 +225,4 @@ createParticles();
 document.addEventListener('DOMContentLoaded', () => {
     // Add loading animation
     document.body.classList.add('loaded');
-}); 
+});
