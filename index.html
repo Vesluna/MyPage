@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT's Void</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">KT</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to KT's Void</h1>
+                <p class="hero-subtitle">You can find out more about him here!</p>
+                <button class="cta-button" id="cta-btn">Explore</button>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <h3>Name</h3>
+                <p>KT</p>
+                <h3>Age</h3>
+                <p>16</p>
+                <h3>About Me</h3>
+                <p>I'm a creative enthusiast passionate about building games, apps, and mods. From educational pop-up quizzes to futuristic interfaces and custom Minecraft enchantments, I love blending fun with functionality. My projects are often inspired by horror, innovation, and unique storytelling. I enjoy creating immersive experiences that engage users in unique ways, like horror story apps and Roblox games.</p>
+                <h3>Things I Like</h3>
+                <ul>
+                    <li>Horror related content and games</li>
+                    <li>Roblox, Minecraft, Undertale...</li>
+                    <li>Developing Games</li>
+                    <li>Candy like; CandyCorn, Twix, And more.</li>
+                    <li>Unique storytelling</li>
+                </ul>
+                <h3>Things I Dislike</h3>
+                <ul>
+                    <li>Boring, repetitive tasks</li>
+                    <li>People Misunderstanding me</li>
+                    <li>Lack of creativity in projects</li>
+                </ul>
+                <h3>Relationship Status</h3>
+                <p>Single</p>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>StorysALike</h3>
+                        <p>An app that holds a bunch of horror stories that feel unique. It's a downloadable file for immersive reading experiences.</p>
+                        <button id="download-btn" class="project-button">Download</button>
+                    </div>
+                    <div class="project-card">
+                        <h3>My Elevator Game</h3>
+                        <p>Based off of The normal elevator, explore secrets and survive the floors you're brought to because of the elevator!</p>
+                        <button id="play-btn" class="project-button">Play</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="music" class="music">
+            <div class="container">
+                <h2>My Music</h2>
+                <div class="music-grid">
+                    <div class="music-card">
+                        <h3>Music Track 1</h3>
+                        <p>A sample music project I've created. Enjoy the preview!</p>
+                        <audio controls>
+                            <source src="assets/music1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <!-- Add more music cards here as needed -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="discord-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Would you like to join the discord?</p>
+            <img src="assets/DiscordIcon.png" alt="Discord Icon" class="discord-icon">
+            <button id="join-discord">Yes</button>
+            <button id="no-join">No</button>
+        </div>
+    </div>
+
+    <div id="roblox-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-roblox">&times;</span>
+            <p>You're leaving my site to go to https://www.roblox.com/games/placeholder. Continue?</p>
+            <img src="assets/RobloxIcon.png" alt="Roblox Icon" class="roblox-icon">
+            <button id="continue-roblox">Continue</button>
+            <button id="nevermind-roblox">Nevermind</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 KT. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
