@@ -38,6 +38,17 @@ ctaBtn.addEventListener('click', () => {
     }, 150);
 });
 
+// Notification popup function
+function showNotification(message, type = 'info') {
+    const modal = document.getElementById('notification-modal');
+    const msgEl = document.getElementById('notification-message');
+    
+    msgEl.textContent = message;
+    msgEl.style.color = type === 'success' ? '#00ff88' : type === 'error' ? '#ff4444' : '#ffffff';
+    
+    modal.style.display = 'block';
+}
+
 // EmailJS initialization - Replace 'YOUR_PUBLIC_KEY' with your EmailJS public key
 emailjs.init('pTkE3YKT3fghtLjN5');
 
@@ -68,13 +79,13 @@ contactForm.addEventListener('submit', (e) => {
     // Send email using EmailJS with provided service and template IDs
     emailjs.send('service_9953ogi', 'template_m0ndequ', formData)
         .then(() => {
-            alert('Message sent successfully!');
+            showNotification('Message sent successfully!', 'success');
             contactForm.reset();
             button.textContent = originalText;
             button.disabled = false;
         }, (error) => {
             console.error('EmailJS error:', error);
-            alert('Failed to send message. Please try again later.');
+            showNotification('Failed to send message. Please try again later.', 'error');
             button.textContent = originalText;
             button.disabled = false;
         });
@@ -108,6 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const robloxLink = 'https://www.roblox.com/games/placeholder'; // Replace with actual Roblox link
         window.location.href = robloxLink;
         robloxModal.style.display = 'none';
+    });
+
+    // Notification modal close handlers
+    document.querySelector('.close-notification').addEventListener('click', () => {
+        document.getElementById('notification-modal').style.display = 'none';
+    });
+    document.getElementById('close-notification').addEventListener('click', () => {
+        document.getElementById('notification-modal').style.display = 'none';
     });
     
     // Generic button event listeners
