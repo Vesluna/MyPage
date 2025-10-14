@@ -170,13 +170,13 @@ ul {
 }
 
 /* Projects & Skills & Music Grids */
-.projects-grid, .skills-grid, .music-grid {
+.projects-grid, .skills-grid, .music-grid, .top-songs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.project-card, .skill-card, .music-card {
+.project-card, .skill-card, .music-card, .top-song-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem;
     border-radius: 10px;
@@ -185,7 +185,7 @@ ul {
     backdrop-filter: blur(10px);
 }
 
-.project-card:hover, .skill-card:hover, .music-card:hover {
+.project-card:hover, .skill-card:hover, .music-card:hover, .top-song-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
     border-color: #00ff88;
@@ -224,7 +224,7 @@ ul {
     transition: width 1.5s ease-in-out;
 }
 
-/* Music */
+/* Music & Top Songs */
 audio {
     width: 100%;
     margin-top: 1rem;
@@ -405,7 +405,7 @@ footer {
         padding: 50px 0;
     }
     
-    .projects-grid, .skills-grid, .music-grid {
+    .projects-grid, .skills-grid, .music-grid, .top-songs-grid {
         grid-template-columns: 1fr;
     }
     
