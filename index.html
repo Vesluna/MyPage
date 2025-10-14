@@ -70,19 +70,19 @@
                     <div class="project-card">
                         <h3>StorysALike</h3>
                         <p>An app that holds a bunch of horror stories that feel unique. It's a downloadable file for immersive reading experiences.</p>
-                        <button id="download-btn" class="project-button">Download</button>
+                        <button class="project-button" data-action="modal" data-modal="discord">Download</button>
                     </div>
                     <div class="project-card">
                         <h3>My Elevator Game</h3>
                         <p>Based off of The normal elevator, explore secrets and survive the floors you're brought to because of the elevator!</p>
-                        <button id="play-btn" class="project-button">Play</button>
+                        <button class="project-button" data-action="modal" data-modal="roblox">Play</button>
                     </div>
                     <!-- Example: Add more like this -->
                     <!--
                     <div class="project-card">
                         <h3>New Project</h3>
                         <p>Description here.</p>
-                        <button class="project-button">Action</button>
+                        <button class="project-button" data-action="redirect" data-url="https://example.com">Visit</button>
                     </div>
                     -->
                 </div>
@@ -126,10 +126,10 @@
                 <h2>My Music</h2>
                 <div class="music-grid">
                     <div class="music-card">
-                        <h3>NewComer - Sample</h3>
-                        <p>A sample of one of the songs I've made.</p>
+                        <h3>Music Track 1</h3>
+                        <p>A sample music project I've created. Enjoy the preview!</p>
                         <audio controls>
-                            <source src="NewComerSample.mp3" type="audio/mpeg">
+                            <source src="assets/music1.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </div>
@@ -155,7 +155,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <p>Would you like to join the discord?</p>
-            <img src="DiscordIcon.png" alt="Discord Icon" class="discord-icon">
+            <img src="assets/DiscordIcon.png" alt="Discord Icon" class="discord-icon">
             <button id="join-discord">Yes</button>
             <button id="no-join">No</button>
         </div>
@@ -165,7 +165,7 @@
         <div class="modal-content">
             <span class="close-roblox">&times;</span>
             <p>You're leaving my site to go to https://www.roblox.com/games/placeholder. Continue?</p>
-            <img src="RobloxIcon.png" alt="Roblox Icon" class="roblox-icon">
+            <img src="assets/RobloxIcon.png" alt="Roblox Icon" class="roblox-icon">
             <button id="continue-roblox">Continue</button>
             <button id="nevermind-roblox">Nevermind</button>
         </div>
