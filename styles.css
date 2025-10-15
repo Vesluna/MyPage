@@ -169,29 +169,30 @@ ul {
     margin-bottom: 2rem;
 }
 
-/* Projects & Skills & Music Grids */
-.projects-grid, .skills-grid, .music-grid, .top-songs-grid {
+/* Projects & Skills & Music & Socials Grids */
+.projects-grid, .skills-grid, .music-grid, .top-songs-grid, .socials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.project-card, .skill-card, .music-card, .top-song-card {
+.project-card, .skill-card, .music-card, .top-song-card, .social-card {
     background: rgba(255, 255, 255, 0.05);
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid #333;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
+    text-align: center;
 }
 
-.project-card:hover, .skill-card:hover, .music-card:hover, .top-song-card:hover {
+.project-card:hover, .skill-card:hover, .music-card:hover, .top-song-card:hover, .social-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
     border-color: #00ff88;
 }
 
-.project-button {
+.project-button, .social-button {
     background: #00ff88;
     color: #000;
     border: none;
@@ -203,8 +204,61 @@ ul {
     margin-top: 1rem;
 }
 
-.project-button:hover {
+.project-button:hover, .social-button:hover {
     background: #00cc6a;
+}
+
+/* Socials Specific */
+.social-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.no-link {
+    color: #888;
+    font-style: italic;
+}
+
+.no-link.center {
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.social-category {
+    margin-bottom: 3rem;
+}
+
+.category-title.green {
+    color: #00ff88;
+}
+
+.category-title.red {
+    color: #ff4444;
+}
+
+.category-title.rainbow {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.separator {
+    border: 0;
+    height: 2px;
+    margin-bottom: 2rem;
+}
+
+.separator.green {
+    background: #00ff88;
+}
+
+.separator.red {
+    background: #ff4444;
+}
+
+.separator.rainbow {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
 }
 
 /* Skills Progress Bars */
@@ -414,7 +468,7 @@ footer {
         padding: 50px 0;
     }
     
-    .projects-grid, .skills-grid, .music-grid, .top-songs-grid {
+    .projects-grid, .skills-grid, .music-grid, .top-songs-grid, .socials-grid {
         grid-template-columns: 1fr;
     }
     
