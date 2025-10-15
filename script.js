@@ -93,7 +93,7 @@ contactForm.addEventListener('submit', (e) => {
 
 // Generic Project Button Handler
 document.addEventListener('DOMContentLoaded', () => {
-    const projectButtons = document.querySelectorAll('.project-button');
+    const projectButtons = document.querySelectorAll('.project-button, .social-button');
     const discordModal = document.getElementById('discord-modal');
     const robloxModal = document.getElementById('roblox-modal');
     
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         discordModal.style.display = 'none';
     });
     document.getElementById('join-discord').addEventListener('click', () => {
-        window.location.href = 'https://discord.gg/ZAUyBfndwU'; // Replace with actual Discord invite link
+        window.location.href = 'https://discord.gg/placeholder'; // Replace with actual Discord invite link
         discordModal.style.display = 'none';
     });
     
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         robloxModal.style.display = 'none';
     });
     document.getElementById('continue-roblox').addEventListener('click', () => {
-        const robloxLink = 'https://www.roblox.com/games/83790723969991'; // Replace with actual Roblox link
+        const robloxLink = 'https://www.roblox.com/games/placeholder'; // Replace with actual Roblox link
         window.location.href = robloxLink;
         robloxModal.style.display = 'none';
     });
@@ -191,8 +191,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe project cards, skill cards, music cards, top-song cards, and sections
-document.querySelectorAll('.project-card, .skill-card, .music-card, .top-song-card, .about, .contact, .skills, .music, .top-songs').forEach(el => {
+// Observe project cards, skill cards, music cards, top-song cards, social cards, and sections
+document.querySelectorAll('.project-card, .skill-card, .music-card, .top-song-card, .social-card, .about, .contact, .skills, .music, .top-songs, .socials').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
