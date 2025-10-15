@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         discordModal.style.display = 'none';
     });
     document.getElementById('join-discord').addEventListener('click', () => {
-        window.location.href = 'https://discord.gg/placeholder'; // Replace with actual Discord invite link
+        window.location.href = 'https://discord.gg/ZAUyBfndwU'; // Replace with actual Discord invite link
         discordModal.style.display = 'none';
     });
     
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         robloxModal.style.display = 'none';
     });
     document.getElementById('continue-roblox').addEventListener('click', () => {
-        const robloxLink = 'https://www.roblox.com/games/placeholder'; // Replace with actual Roblox link
+        const robloxLink = 'https://www.roblox.com/games/83790723969991'; // Replace with actual Roblox link
         window.location.href = robloxLink;
         robloxModal.style.display = 'none';
     });
